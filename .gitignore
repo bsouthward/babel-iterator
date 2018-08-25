@@ -1,2 +1,3 @@
-# don't load first draft
+# ignore these two incl first draft
+.DS_Store
 babel.py
