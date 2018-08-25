@@ -1,0 +1,1 @@
+This thing just takes the powerset of a range of numbers converted into characters. If you run it on a large enough N it should result in every word. It is an iterator because I felt like writing an iterator.
