@@ -3,6 +3,7 @@
 from itertools import permutations, chain
 
 class Babel:
+	# Even just size = 2 results in a pretty big list!
 	def __init__(self, size):
 		self.current = 0
 		self.high = size
@@ -40,6 +41,16 @@ class Babel:
 			self.current += 1
 			return library
 
-# Even just n = 2 results in a pretty big list!
-for b in Babel(5):
-	print(b)
+# Turn result into strings
+def library_to_strings(library, separator=''):
+	#return [str.join(l) for l in library]
+	results = []
+	for l in library:
+		for e in l:
+			separator = ''
+			results.append(separator.join(e))
+	return results
+
+for b in Babel(2):
+	#print(b)
+	print(library_to_strings(b))
