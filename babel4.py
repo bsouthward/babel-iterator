@@ -20,6 +20,10 @@ class Babel:
 			offset = 65
 			return [chr(c+offset) for c in range(0, 2**n-1)]
 
+		# create every possible combination of a set of characters
+		def all_combinations(alphabet, n=1):
+			return [list(combinations_with_replacement(alphabet, i)) for i in range(len(alphabet)+1)]
+		
 		# Turn result into strings
 		def library_to_strings(library, separator=''):
 			#return [str.join(l) for l in library]
@@ -27,13 +31,6 @@ class Babel:
 			for l in library:
 				for e in l:
 					results.append(separator.join(e))
-			return results
-
-		# create every possible combination of a set of characters
-		def all_combinations(alphabet, n=1):
-			results = []
-			for i in range(len(alphabet)+1):
-				results.append(list(combinations_with_replacement(alphabet, i)))
 			return results
 
 		# Do the thing if something isn't broken
