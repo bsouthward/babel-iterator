@@ -41,5 +41,5 @@ class Babel:
 			return library
 
 # Even just n = 2 results in a pretty big list!
-for b in Babel(2):
+for b in Babel(5):
 	print(b)
