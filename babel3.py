@@ -51,6 +51,6 @@ def library_to_strings(library, separator=''):
 			results.append(separator.join(e))
 	return results
 
-for b in Babel(2):
+for b in Babel(3):
 	#print(b)
 	print(library_to_strings(b))
