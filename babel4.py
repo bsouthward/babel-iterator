@@ -18,16 +18,24 @@ class Babel:
 		def get_alphabet(n):
 			# setting to 65 for testing purposes so it starts at 'a'
 			offset = 65
-			return [chr(c+offset) for c in range(0, 2**n-1)]
+			return [chr(c+offset) for c in range(1, 2**n)]
 
 		# create every possible combination of a set of characters
 		def all_combinations(alphabet, n=1):
-			return [list(combinations_with_replacement(alphabet, i)) for i in range(len(alphabet)+1)]
+			return [tuple(combinations_with_replacement(alphabet, i))
+				 for i in range(len(alphabet)+1)]
 		
 		# Turn result into strings
 		def library_to_strings(library, separator=''):
-			#return [str.join(l) for l in library]
 			results = []
+			for l in library:
+				for e in l:
+					results.append(separator.join(e))
+			return results
+
+		# version using tuples for speed
+		def library_to_strings2(library, separator=''):
+			results = ()
 			for l in library:
 				for e in l:
 					results.append(separator.join(e))
@@ -44,5 +52,4 @@ class Babel:
 
 
 for b in Babel(2):
-	#print(b)
 	print(b)
