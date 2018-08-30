@@ -1,9 +1,10 @@
-from itertools import permutations, chain
+from itertools import combinations, chain
 
 def powerset_cardinality(n):
 	# n is number of elements to combine from
-	# thank you Stefan Falk for the powerset function
 	s = [y for y in range(0,n)]
+
+	# thank you Stefan Falk for the powerset function
 	def powerset(s):
 		x = len(s)
 		masks = [1 << i for i in range(x)]
@@ -15,6 +16,6 @@ def powerset_cardinality(n):
 		return chain.from_iterable(combinations(list(iterable), r)
 			 for r in range(len(s)+1))
 
-	return len(list(powerset(s)))
+	return len(list(powerset2(s)))
 
 print(powerset_cardinality(7))
