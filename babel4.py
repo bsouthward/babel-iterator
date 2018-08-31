@@ -57,11 +57,11 @@ class Babel:
 		else:
 			alphabet = get_alphabet(self.current)
 			# library = library_to_strings(all_combinations(alphabet, self.current))
-			library = sorted(list(set(library_to_strings(all_permutations(
-				library_to_strings(all_combinations(alphabet, self.current)))))))
+			library = sorted(set(library_to_strings(all_permutations(
+				library_to_strings(all_combinations(alphabet, self.current))))))
 			self.current += 1
 			return library
 
 # print the first few Library of Babel rooms
-for b in Babel(2):
+for b in Babel(3):
 	print(b)
